@@ -2,12 +2,22 @@ import React, { useEffect, useState} from 'react';
 import Missons from '../Missions';
 import fetch from "isomorphic-fetch";
 import {Mdescription, MissonsContainer, MList, MTexts, MTitle} from './missions.style';
+import {ApolloClient, InMemoryCache,ApolloProvider,useQuery,gql } from "@apollo/client";
 const ListMissons = () => {
 //    fetch('http://localhost:1337/missions').then((response) => {
 //     console.log(response.json());
 //    }).catch((error) => {
 //     console.log(error.json());
 //    })
+
+
+const client = new ApolloClient({
+    uri: 'https://48p1r2roz4.sse.codesandbox.io',
+    cache: new InMemoryCache()
+  });
+
+
+  
    
   const [posts, setPosts] =  useState([]);
   
