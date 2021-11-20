@@ -36,9 +36,9 @@ const About = () =>{
 
 
   async function AboutData(){
-    const aboutus = "about-us"
+    const aboutus = "about-me"
   try{
-   const res = await fetch(`http://localhost:1337/pages?slug=${aboutus}`);
+   const res = await fetch(`http://dashboard.enjiricenterministries.org/pages?slug=${aboutus}`);
    const data =  res.json();
 
     data.then((data) =>{
@@ -60,8 +60,11 @@ const About = () =>{
             <AboutLeftContainer>
                 <AboutCardBackgroud/>
                 <AboutCard>
-      {/* <CardImg src="https://images.unsplash.com/photo-1633157190991-efa146b650f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" /> */}
-                <CardImg src={"http://localhost:1337" + about.profile_pic?.url} /> 
+
+      {/*
+      "http://dashboard.enjiricenterministries.org" +
+      <CardImg src="https://images.unsplash.com/photo-1633157190991-efa146b650f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" /> */}
+                <CardImg src={ about.profile_pic?.url} /> 
                 </AboutCard>
             </AboutLeftContainer>
             <AboutRightContainer>
@@ -72,7 +75,7 @@ const About = () =>{
                  {about.About}
               </AboutSub>
               <AboutDescription>
-              {about.description}
+              {about.description.substring(0, 548) + ".."}
               </AboutDescription>
              <AboutButtonContainer>
                <AboutButton>Read More</AboutButton>

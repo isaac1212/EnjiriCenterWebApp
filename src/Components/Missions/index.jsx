@@ -4,11 +4,12 @@ import mission1 from '../../assets/images/missions/mission1.jpg';
 import { AboutButton } from '../AboutButton';
 const Missons = ({post}) => {
     //   console.log("my PRO", post.featured_image.url);
+    // http://localhost:1337" + 
     return (
         <div id="mission">
            <MissonsContainer>
            <CardTitle>{post.title}</CardTitle>
-           <CardImage src={"http://localhost:1337" + post.featured_image.url}/>
+           <CardImage src={post.featured_image.url}/>
            <Carddescription>
            {post.description} 
            </Carddescription>

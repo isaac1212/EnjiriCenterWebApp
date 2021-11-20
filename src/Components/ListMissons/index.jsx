@@ -30,7 +30,7 @@ async function getallMissons() {
 
     try{
 
-        const res = await fetch('http://localhost:1337/missions')
+        const res = await fetch('http://dashboard.enjiricenterministries.org/missions')
         const data = res.json();
 
         console.log(data);

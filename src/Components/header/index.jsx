@@ -69,6 +69,7 @@ import { SidebarMenu } from '../SidebarMenu';
   @media screen and (max-width:481px){
    top: 40%;
    transform: translateX(50%);
+   display:none;
 } 
 
 @media screen and (max-width:768px){
